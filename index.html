@@ -1,42 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="style.css
+">
+    <title>Document</title>
 </head>
-<body style="text-align: center;">
-	<div class="container">
-	 <div id="main" class="card card-body">
-	  <h2 style="color: green"    class="title">EXPENSE TRACKER</h2>
-	  <form id="addForm" class="form-inline mb-3">
-		AMOUNT:<input type="text" class="form-control mr-2" id="item">
-		DESCRIPTION:<input type="text" name="" id="item2">
-		TYPE:<select name="" id="select1">
-			<option value=""></option>
-			<option value="">FUEL</option>
-			<option value="">ELECTRICITY</option>
-			<option value="">MOVIE</option>
-			<option value="">VEGETABLES</option>
-		</select>
-		<input type="submit" class="btn btn-dark" value="Submit">
-	  </form>
-	  <h2 style="color: darkorange;" class="title">YOUR EXPENSE</h2>
-	  <ul id="items" class="list-group">
-		<li class="list-group-item">EXPENSE 1 <button class="btn delete">DELETE</button> <button class="edit">EDIT</button></li>
-		
-	  </ul>
-	 </div>
-	</div>
-
-
-	<script src="h.js"></script>
+<body>
+    <div class="container mt-5">
+        <h1>Expense Tracker</h1>
+        <hr>
+        <form>
+          <div class="form-group-dark">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="Enter description">
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+          </div>
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select class="form-control" id="type">
+                <option>None</option>
+              <option>Movie</option>
+              <option>Entertainment</option>
+              <option>Food</option>
+              <option>Cake</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-outline-light" onclick="addExpense()">Add</button>
+        </form>
+        <hr>
+        <table class="table table-dark mt-3">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="expense-table">
+            <!-- Expense rows will be added here -->
+          </tbody>
+        </table>
+      </div>
+    
 </body>
+	
+<script src="h.js"></script>
 </html>
-
-
-
-
